@@ -4,11 +4,11 @@ import pickle
 
 
 app = Flask(__name__)
-classifier_dt = pickle.load(open('mobiledt.pkl','rb'))
-classifier_knn = pickle.load(open('mobileknn.pkl','rb'))
-classifier_svm = pickle.load(open('mobilesvm.pkl','rb'))
-classifier_rf = pickle.load(open('mobilerf.pkl','rb'))
-classifier_NB = pickle.load(open('mobilenb.pkl','rb'))
+classifier_dt = pickle.load(open('mousicdt.pkl','rb'))
+classifier_knn = pickle.load(open('musicknn.pkl','rb'))
+classifier_svm = pickle.load(open('musicsvm.pkl','rb'))
+classifier_rf = pickle.load(open('musicrf.pkl','rb'))
+classifier_NB = pickle.load(open('musicnb.pkl','rb'))
 
 @app.route('/predict1')
 def home():
@@ -18,63 +18,13 @@ def home():
 @app.route('/predict',methods=['GET'])
 def predict():
 
-    battery_power = int(request.args.get('battery_power'))
-    clock_speed = float(request.args.get('clock_speed'))
-    fc = int(request.args.get('fc'))
-    int_memory = int(request.args.get('int_memory'))
-    m_dep = float(request.args.get('m_dep'))
-    mobile_wt = float(request.args.get('mobile_wt'))
-    n_cores = int(request.args.get('n_cores'))
-    pc = int(request.args.get('pc'))
-    px_height = float(request.args.get('px_height'))
-    px_width = float(request.args.get('px_width'))
-    ram = int(request.args.get('ram'))
-    sc_h = float(request.args.get('sc_h'))
-    sc_w = float(request.args.get('sc_w'))
-    talk_time = int(request.args.get('talk_time'))
-
-
-    blue = (request.args.get('blue'))
-
-    if blue=="Yes":
-      blue = 1
-    else:
-      blue = 0
-
-    dual_sim = (request.args.get('dual_sim'))
-
-    if dual_sim=="Yes":
-      dual_sim = 1
-    else:
-      dual_sim = 0
-
-    four_g = (request.args.get('four_g'))
-
-    if four_g=="Yes":
-      four_g = 1
-    else:
-      four_g = 0
-
-    three_g = (request.args.get('three_g'))
-
-    if three_g=="Yes":
-      three_g = 1
-    else:
-      three_g = 0
-
-    touch_screen = (request.args.get('touch_screen'))
-
-    if touch_screen=="Yes":
-      touch_screen = 1
-    else:
-      touch_screen = 0
-
-    wifi = (request.args.get('wifi'))
-
-    if wifi=="Yes":
-      wifi = 1
-    else:
-      wifi = 0
+    danceability = float(request.args.get('danceability'))
+    energy = float(request.args.get('energy'))
+    mode = int(request.args.get('mode'))
+    speechiness = float(request.args.get('speechiness'))
+    acostiness = float(request.args.get('acoustiness'))
+    liveness = float(request.args.get('liveness'))
+    valence = float(request.args.get('valence'))
 
 
     
@@ -83,32 +33,53 @@ def predict():
     Model = (request.args.get('Model'))
 
     if Model=="Random Forest":
-      prediction = classifier_dt.predict([[battery_power, clock_speed, fc, int_memory, m_dep, mobile_wt, n_cores, pc, px_height, px_width, ram, sc_h, sc_w, talk_time, blue, dual_sim, four_g, three_g, touch_screen, wifi]])
+      prediction = classifier_dt.predict([[danceability, energy, mode, speechiness, acoustiness, liveness, valence]])
 
     elif Model=="Decision Tree":
-      prediction = classifier_knn.predict([[battery_power, clock_speed, fc, int_memory, m_dep, mobile_wt, n_cores, pc, px_height, px_width, ram, sc_h, sc_w, talk_time, blue, dual_sim, four_g, three_g, touch_screen, wifi]])
+      prediction = classifier_knn.predict([[danceability, energy, mode, speechiness, acoustiness, liveness, valence]])
 
     elif Model=="KNN":
-      prediction = classifier_svm.predict([[battery_power, clock_speed, fc, int_memory, m_dep, mobile_wt, n_cores, pc, px_height, px_width, ram, sc_h, sc_w, talk_time, blue, dual_sim, four_g, three_g, touch_screen, wifi]])
+      prediction = classifier_svm.predict([[danceability, energy, mode, speechiness, acoustiness, liveness, valence]])
 
     elif Model=="SVM":
-      prediction = classifier_rf.predict([[battery_power, clock_speed, fc, int_memory, m_dep, mobile_wt, n_cores, pc, px_height, px_width, ram, sc_h, sc_w, talk_time, blue, dual_sim, four_g, three_g, touch_screen, wifi]])
+      prediction = classifier_rf.predict([[danceability, energy, mode, speechiness, acoustiness, liveness, valence]])
 
     else:
-      prediction = classifier_NB.predict([[battery_power, clock_speed, fc, int_memory, m_dep, mobile_wt, n_cores, pc, px_height, px_width, ram, sc_h, sc_w, talk_time, blue, dual_sim, four_g, three_g, touch_screen, wifi]])
+      prediction = classifier_NB.predict([[danceability, energy, mode, speechiness, acoustiness, liveness, valence]])
 
     
     if prediction == [0]:
-      return render_template('index.html', prediction_text='Mobile belongs to 1st group', extra_text =" as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Mobile belongs to 0 group', extra_text =" as per Prediction by " + Model)
     
     elif prediction ==[1]:
-      return render_template('index.html', prediction_text='Mobile belongs to 2nd group', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Mobile belongs to 1 group', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[2]:
-      return render_template('index.html', prediction_text='Mobile belongs to 3rd group', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Mobile belongs to 2 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[3]:
+      return render_template('index.html', prediction_text='Mobile belongs to 3 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[4]:
+      return render_template('index.html', prediction_text='Mobile belongs to 4 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[5]:
+      return render_template('index.html', prediction_text='Mobile belongs to 5 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[6]:
+      return render_template('index.html', prediction_text='Mobile belongs to 6 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[7]:
+      return render_template('index.html', prediction_text='Mobile belongs to 7 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[8]:
+      return render_template('index.html', prediction_text='Mobile belongs to 8 group', extra_text ="as per Prediction by " + Model)
+
+    elif prediction ==[9]:
+      return render_template('index.html', prediction_text='Mobile belongs to 9 group', extra_text ="as per Prediction by " + Model)
 
     else:
-      return render_template('index.html', prediction_text='Mobile belongs to 4th group', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Mobile belongs to 10 group', extra_text ="as per Prediction by " + Model)
 
 #---------------------------------------------------------
 
