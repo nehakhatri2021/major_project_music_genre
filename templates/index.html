@@ -89,19 +89,19 @@
         
     </nav>
     </div>
-    <div style="background-color: rgba(147, 150, 142, 0.918);">
-        <a href="/aboutusnew" style="color: yellow; align-items: flex-end;">ABOUT US</a>
+    <div style="background-color: salmon;">
+        <a href="/aboutusnew" style="color: white; align-items: flex-end;">ABOUT US</a>
       </div>
 
 
     <div style="background-image: url(static/image/bg.PNG);">
-            <h1 style="margin-left: 500px; align-items: center; color:yellow; ">Machine Learning Project</h1>
+            <h1 style="margin-left: 500px; align-items: center; color:black; ">Machine Learning Project</h1>
            
                
 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px; margin-left: 350px;">
                 <br><br>
-                <h4 style="color:white; text-align:center ; font-family:Georgia, 'Times New Roman', Times, serif;">This project is based on machine learning and data science with python. Through this project we can predict the price range of types of mobile phones by putting in different specifications and various features. Based on this input, our machine will anticipate in which price range or price group the product lies. Our machine is able to foresee as it learned from the data we provided previously, it identified patterns and hence making decisions effectively.  </h4>
+                <h4 style="color:white; text-align:center ; font-family:Georgia, 'Times New Roman', Times, serif;">This project is based on machine learning and data science with python. Through this project we can predict the Music Genre by Using Features of MUsic . Based on this input, our machine will predict Genre OF Music. Our machine is able to foresee as it learned from the data we provided previously, it identified patterns and hence making decisions effectively.  </h4>
               
             </div>
             <hr style="color:white ;">
@@ -119,76 +119,41 @@
         <form action="{{ url_for('predict')}} "method="get" class="row g-3 my-4">
          
 
-            <h3 style="color: rgb(245, 245, 40);font-family:Georgia, 'Times New Roman', Times, serif;">Specifications</h3>
+            <h3 style="color: black;font-family:Georgia, 'Times New Roman', Times, serif;">Features</h3>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">danceability</label>
-                <input type="number" class="form-control" id="danceability" name="danceability" step="any" required="required" min="0" max="2000" placeholder="Enter battery power in mAh">
+                <input type="number" class="form-control" id="danceability" name="danceability" step="any" required="required" min="0" max="2000" placeholder="Enter danceability">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">energy</label>
-                <input type="number" class="form-control" id="energy" name="energy" step="any" required="required" min="0" max="3" placeholder="Enter clock speed(speed of instruction execution)">
+                <input type="number" class="form-control" id="energy" name="energy" step="any" required="required" min="0" max="3" placeholder="Enter energy">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">mode</label>
-                <input type="number" class="form-control" id="mode" name="mode" step="any" required="required" min="0" max="1" placeholder="Enter no. of front cameras">
+                <input type="number" class="form-control" id="mode" name="mode" step="any" required="required" min="0" max="1" placeholder="Enter mode(0 or 1)">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">speechiness</label>
-                <input type="number" class="form-control" id="speechiness" name="speechiness" step="any" required="required" min="0" max="64" placeholder="Enter Internal Memory in Gigabytes">
+                <input type="number" class="form-control" id="speechiness" name="speechiness" step="any" required="required" min="0" max="64" placeholder="Enter speechiness">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">acoustiness</label>
-                <input type="number" class="form-control" id="acoustiness" name="acoustiness" step="any" required="required" min="0" max="2" placeholder="Enter mobile depth in cm">
+                <input type="number" class="form-control" id="acoustiness" name="acoustiness" step="any" required="required" min="0" max="2" placeholder="Enter acoustiness">
             </div>
             
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">liveness</label>
-                <input type="number" class="form-control" id="liveness" name="liveness" step="any" required="required" min="0" max="20" placeholder="Enter Weight of mobile">
+                <input type="number" class="form-control" id="liveness" name="liveness" step="any" required="required" min="0" max="20" placeholder="Enter liveness">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">valence</label>
-                <input type="number" class="form-control" id="valence" name="valence" step="any" required="required" min="0" max="8" placeholder="Enter number of cores of processor">
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Primary Camera mega pixels</label>
-                <input type="number" class="form-control" id="pc" name="pc" step="any" required="required" placeholder="Enter primary camera mega pixels">
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Pixel Resolution Height</label>
-                <input type="number" class="form-control" id="px_height" name="px_height" step="any" required="required" min="0" max="2000" placeholder="Enter pixel resolution height">
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Pixel Resolution Width</label>
-                <input type="number" class="form-control" id="px_width" name="px_width" step="any" required="required" min="500" max="2000" placeholder="Enter pixel resolution width">
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Random Access Memory</label>
-                <input type="number" class="form-control" id="ram" name="ram" step="any" required="required" min="256" max="4000" placeholder="Enter RAM in Megabytes">
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Screen Height of mobile</label>
-                <input type="number" class="form-control" id="sc_h" name="sc_h" step="any" required="required" min="0" max="20" placeholder="Enter screen height of mobile in cm">
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Screen Width of mobile</label>
-                <input type="number" class="form-control" id="sc_w" name="sc_w" step="any" required="required" min="2" max="18" placeholder="Enter screen Width of mobile in cm">
-            </div>
-
-            <div class="col-12" style="color: #FFF; padding-bottom: 10px;">
-                <label for="floatingInput" class="form-label">Talk Time</label>
-                <input type="number" class="form-control" id="talk_time" name="talk_time" step="any" required="required" min="2" max="20" placeholder="Enter longest time that a single battery charge will last">
+                <input type="number" class="form-control" id="valence" name="valence" step="any" required="required" min="0" max="8" placeholder="Enter number of valence">
             </div>
 
             
@@ -250,7 +215,7 @@
         <div class="bg-secondary " style="min-height: 40px; background-color: rgb(172, 169, 169);">
 
             <marquee style="color:#fff; margin-top: 7px;">
-                <h9>Developed by Department of Computer Engineering, PIET</h9>
+                <h9>Developed by Neha Khatri, Student of Computer Engineering, PIET</h9>
             </marquee>
         </div>
     </div>
