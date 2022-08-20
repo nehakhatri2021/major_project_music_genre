@@ -1,0 +1,314 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internship Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <style>
+        h2,h4 {
+            text-align: center;
+        }
+
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            color: #000;
+        }
+
+        .form1 {
+            /* background: #000000; */
+            
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            
+            height: fit-content;
+            flex-direction: column;
+            /* width: 500px; */
+            border-left-width: 250px;
+            border-right-width: 250px;
+            border: 2px solid #ccc;
+            /* padding: 30px; */
+            background: rgb(10, 10, 10);
+            /* border-radius: 15px; */
+            /* margin-right: 100px; */
+        }
+
+        .row{
+            width: 500px;
+            /* margin-left: 70px; */
+        }
+
+        .head {
+            color: #000;
+            background-color: rgb(254, 254, 253);
+            vertical-align: top;
+        }
+
+        .tail {
+            padding-top: 17px;
+            color: #000;
+            background-color: rgba(147, 150, 142, 0.918);
+            vertical-align: bottom;
+        }
+
+        .ans {
+            color: #ffffff;
+        }
+
+        button{
+            width: 200px;
+            margin-top: 15px;
+        }
+
+        /* style="color: #FFF;background-color: #000;" */
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+    <nav style="width: 100%;" >
+         <a class="  navbar-brand" href="#" style="margin-left: 300px; background-color: gray; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;">
+             <img style="max-height: auto; width:50%;" src="static/image/PIET logo with tagline.jpg" 
+             class="img-responsive" style="margin-top:0px; width: auto; height: auto; min-width:100%; min-height: auto;">
+            </div>  
+
+            
+      
+
+           
+        </a>
+        
+    </nav>
+    </div>
+    <div style="background-color: rgba(147, 150, 142, 0.918);">
+        <a href="/aboutusnew" style="color: yellow; align-items: flex-end;">ABOUT US</a>
+      </div>
+
+
+    <div style="background-image: url(static/image/bg.PNG);">
+            <h1 style="margin-left: 500px; align-items: center; color:yellow; ">Machine Learning Project</h1>
+           
+               
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px; margin-left: 350px;">
+                <br><br>
+                <h4 style="color:white; text-align:center ; font-family:Georgia, 'Times New Roman', Times, serif;">This project is based on machine learning and data science with python. Through this project we can predict the price range of types of mobile phones by putting in different specifications and various features. Based on this input, our machine will anticipate in which price range or price group the product lies. Our machine is able to foresee as it learned from the data we provided previously, it identified patterns and hence making decisions effectively.  </h4>
+              
+            </div>
+            <hr style="color:white ;">
+
+            <div class="col-12" style="color: #FFF;">
+                <img style="max-height:200px; max-width:1500px; margin-left: 550px; margin-top: 20px; margin-bottom: 20px;" src="static/image/Capture.PNG" 
+                class="img-responsive" style="margin-top:0px; width: auto; height: auto; min-width:100%; min-height: auto;">
+            </div>
+
+    </div>
+
+
+
+    <div class="form1">
+        <form action="{{ url_for('predict')}} "method="get" class="row g-3 my-4">
+         
+
+            <h3 style="color: rgb(245, 245, 40);font-family:Georgia, 'Times New Roman', Times, serif;">Specifications</h3>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Battery Power in mAh</label>
+                <input type="number" class="form-control" id="battery_power" name="battery_power" step="any" required="required" min="0" max="2000" placeholder="Enter battery power in mAh">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Clock Speed</label>
+                <input type="number" class="form-control" id="clock_speed" name="clock_speed" step="any" required="required" min="0" max="3" placeholder="Enter clock speed(speed of instruction execution)">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">No. of Front Cameras</label>
+                <input type="number" class="form-control" id="fc" name="fc" step="any" required="required" min="0" max="20" placeholder="Enter no. of front cameras">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Internal Memory</label>
+                <input type="number" class="form-control" id="int_memory" name="int_memory" step="any" required="required" min="2" max="64" placeholder="Enter Internal Memory in Gigabytes">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Mobile Depth</label>
+                <input type="number" class="form-control" id="m_dep" name="m_dep" step="any" required="required" min="0" max="1" placeholder="Enter mobile depth in cm">
+            </div>
+            
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Weight of Mobile Phone</label>
+                <input type="number" class="form-control" id="mobile_wt" name="mobile_wt" step="any" required="required" min="50" max="200" placeholder="Enter Weight of mobile">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Core processor</label>
+                <input type="number" class="form-control" id="n_cores" name="n_cores" step="any" required="required" min="1" max="8" placeholder="Enter number of cores of processor">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Primary Camera mega pixels</label>
+                <input type="number" class="form-control" id="pc" name="pc" step="any" required="required" placeholder="Enter primary camera mega pixels">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Pixel Resolution Height</label>
+                <input type="number" class="form-control" id="px_height" name="px_height" step="any" required="required" min="0" max="2000" placeholder="Enter pixel resolution height">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Pixel Resolution Width</label>
+                <input type="number" class="form-control" id="px_width" name="px_width" step="any" required="required" min="500" max="2000" placeholder="Enter pixel resolution width">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Random Access Memory</label>
+                <input type="number" class="form-control" id="ram" name="ram" step="any" required="required" min="256" max="4000" placeholder="Enter RAM in Megabytes">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Screen Height of mobile</label>
+                <input type="number" class="form-control" id="sc_h" name="sc_h" step="any" required="required" min="0" max="20" placeholder="Enter screen height of mobile in cm">
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Screen Width of mobile</label>
+                <input type="number" class="form-control" id="sc_w" name="sc_w" step="any" required="required" min="2" max="18" placeholder="Enter screen Width of mobile in cm">
+            </div>
+
+            <div class="col-12" style="color: #FFF; padding-bottom: 10px;">
+                <label for="floatingInput" class="form-label">Talk Time</label>
+                <input type="number" class="form-control" id="talk_time" name="talk_time" step="any" required="required" min="2" max="20" placeholder="Enter longest time that a single battery charge will last">
+            </div>
+
+            <hr style="color: yellow; ">
+            <h3 style="color: rgb(245, 245, 40); font-family:'Times New Roman', Times, serif;">Features</h3>
+            
+            
+            <div class="col-md-4" style="color: #FFF;">
+                <label for="inputState" class="form-label">Bluetooth</label>
+                <select id="blue" name ="blue" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Dual Sim</label>
+                <select id="dual_sim" name ="dual_sim" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">4-g Network</label>
+                <select id="four_g" name ="four_g" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">3-g Network</label>
+                <select id="three_g" name ="three_g" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Touch Screen</label>
+                <select id="touch_screen" name ="touch_screen" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="col-12" style="color: #FFF;">
+                <label for="floatingInput" class="form-label">Wifi</label>
+                <select id="wifi" name ="wifi" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            
+
+            <div class="col-md-4" style="color: #FFF;">
+                <label for="inputState" class="form-label">Choose a Classification Model</label>
+                <select id="Model" name ="Model" step = "any" class="form-select" required>
+                    <option selected>Decision Tree</option>
+                    <option>KNN</option>
+                    <option>SVM</option>
+                    <option>Random Forest</option>
+                    <option>Naive Bayes</option>
+                </select>
+            </div>
+
+            <div class="col-12" >
+                <button type="submit" value="NB" name="NB" class="btn btn-outline-danger">Submit</button>
+            </div>
+        </form>
+        
+        
+        <p style="color: #FFF;">
+          {{prediction_text}}
+          {{extra_text}}
+        </p>
+
+    </div>
+
+
+    <div class="col-md-12;">
+        <center><h3 class="section-title" style="text-align: center; margin-top: 30px;">Sponsored by</h3></center>
+      </div>
+    
+    <br>
+    <br>
+
+<div>
+ <table style="padding-bottom: 20px; margin-bottom: 60px; ">
+<tr>
+    <th>
+        <img style="max-height: 200px; margin-left:500px; padding-bottom: 5px; " src="static/image/AICTEIdeaLabFooterLogo.png" alt="...">
+    </th>
+
+    <th>
+        <img style="max-height: 200px; margin-left:0px;" src="static/image/eNBA_logo.png" alt="..." height="300" width="300" >
+
+    </th>
+</tr>
+
+ </table>
+      </div>
+      
+
+  
+         
+
+    
+      <div class="fixed-bottom ">
+        <div class="bg-secondary " style="min-height: 40px; background-color: rgb(172, 169, 169);">
+
+            <marquee style="color:#fff; margin-top: 7px;">
+                <h9>Developed by Department of Computer Engineering, PIET</h9>
+            </marquee>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
