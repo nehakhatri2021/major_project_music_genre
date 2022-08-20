@@ -4,7 +4,7 @@ import pickle
 
 
 app = Flask(__name__)
-classifier_dt = pickle.load(open('mousicdt.pkl','rb'))
+classifier_dt = pickle.load(open('musicdt.pkl','rb'))
 classifier_knn = pickle.load(open('musicknn.pkl','rb'))
 classifier_svm = pickle.load(open('musicsvm.pkl','rb'))
 classifier_rf = pickle.load(open('musicrf.pkl','rb'))
