@@ -122,38 +122,38 @@
             <h3 style="color: rgb(245, 245, 40);font-family:Georgia, 'Times New Roman', Times, serif;">Specifications</h3>
 
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Battery Power in mAh</label>
-                <input type="number" class="form-control" id="battery_power" name="battery_power" step="any" required="required" min="0" max="2000" placeholder="Enter battery power in mAh">
+                <label for="floatingInput" class="form-label">danceability</label>
+                <input type="number" class="form-control" id="danceability" name="danceability" step="any" required="required" min="0" max="2000" placeholder="Enter battery power in mAh">
             </div>
 
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Clock Speed</label>
-                <input type="number" class="form-control" id="clock_speed" name="clock_speed" step="any" required="required" min="0" max="3" placeholder="Enter clock speed(speed of instruction execution)">
+                <label for="floatingInput" class="form-label">energy</label>
+                <input type="number" class="form-control" id="energy" name="energy" step="any" required="required" min="0" max="3" placeholder="Enter clock speed(speed of instruction execution)">
             </div>
 
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">No. of Front Cameras</label>
-                <input type="number" class="form-control" id="fc" name="fc" step="any" required="required" min="0" max="20" placeholder="Enter no. of front cameras">
+                <label for="floatingInput" class="form-label">mode</label>
+                <input type="number" class="form-control" id="mode" name="mode" step="any" required="required" min="0" max="1" placeholder="Enter no. of front cameras">
             </div>
 
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Internal Memory</label>
-                <input type="number" class="form-control" id="int_memory" name="int_memory" step="any" required="required" min="2" max="64" placeholder="Enter Internal Memory in Gigabytes">
+                <label for="floatingInput" class="form-label">speechiness</label>
+                <input type="number" class="form-control" id="speechiness" name="speechiness" step="any" required="required" min="0" max="64" placeholder="Enter Internal Memory in Gigabytes">
             </div>
 
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Mobile Depth</label>
-                <input type="number" class="form-control" id="m_dep" name="m_dep" step="any" required="required" min="0" max="1" placeholder="Enter mobile depth in cm">
+                <label for="floatingInput" class="form-label">acoustiness</label>
+                <input type="number" class="form-control" id="acoustiness" name="acoustiness" step="any" required="required" min="0" max="2" placeholder="Enter mobile depth in cm">
             </div>
             
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Weight of Mobile Phone</label>
-                <input type="number" class="form-control" id="mobile_wt" name="mobile_wt" step="any" required="required" min="50" max="200" placeholder="Enter Weight of mobile">
+                <label for="floatingInput" class="form-label">liveness</label>
+                <input type="number" class="form-control" id="liveness" name="liveness" step="any" required="required" min="0" max="20" placeholder="Enter Weight of mobile">
             </div>
 
             <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Core processor</label>
-                <input type="number" class="form-control" id="n_cores" name="n_cores" step="any" required="required" min="1" max="8" placeholder="Enter number of cores of processor">
+                <label for="floatingInput" class="form-label">valence</label>
+                <input type="number" class="form-control" id="valence" name="valence" step="any" required="required" min="0" max="8" placeholder="Enter number of cores of processor">
             </div>
 
             <div class="col-12" style="color: #FFF;">
@@ -191,57 +191,6 @@
                 <input type="number" class="form-control" id="talk_time" name="talk_time" step="any" required="required" min="2" max="20" placeholder="Enter longest time that a single battery charge will last">
             </div>
 
-            <hr style="color: yellow; ">
-            <h3 style="color: rgb(245, 245, 40); font-family:'Times New Roman', Times, serif;">Features</h3>
-            
-            
-            <div class="col-md-4" style="color: #FFF;">
-                <label for="inputState" class="form-label">Bluetooth</label>
-                <select id="blue" name ="blue" step = "any" class="form-select" required>
-                    <option selected>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-            
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Dual Sim</label>
-                <select id="dual_sim" name ="dual_sim" step = "any" class="form-select" required>
-                    <option selected>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-            
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">4-g Network</label>
-                <select id="four_g" name ="four_g" step = "any" class="form-select" required>
-                    <option selected>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">3-g Network</label>
-                <select id="three_g" name ="three_g" step = "any" class="form-select" required>
-                    <option selected>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Touch Screen</label>
-                <select id="touch_screen" name ="touch_screen" step = "any" class="form-select" required>
-                    <option selected>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-
-            <div class="col-12" style="color: #FFF;">
-                <label for="floatingInput" class="form-label">Wifi</label>
-                <select id="wifi" name ="wifi" step = "any" class="form-select" required>
-                    <option selected>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
             
 
             <div class="col-md-4" style="color: #FFF;">
