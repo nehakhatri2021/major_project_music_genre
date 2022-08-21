@@ -90,7 +90,12 @@ def aboutusnew():
 def first():
     return render_template('first.html')
 
+#----------------------------------------------------------
 
+@app.route('/mini')
+def mini():
+    return render_template('mini.html')
+  
 if __name__=="__main__":
     app.run(debug=True)
 
