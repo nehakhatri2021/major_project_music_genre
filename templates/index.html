@@ -36,7 +36,7 @@
             border-right-width: 250px;
             border: 2px solid #ccc;
             /* padding: 30px; */
-            background: rgb(10, 10, 10);
+            background: #ff0066;
             /* border-radius: 15px; */
             /* margin-right: 100px; */
         }
@@ -48,14 +48,14 @@
 
         .head {
             color: #000;
-            background-color: rgb(254, 254, 253);
+            background-color: grey;
             vertical-align: top;
         }
 
         .tail {
             padding-top: 17px;
             color: #000;
-            background-color: rgba(147, 150, 142, 0.918);
+            background-color: grey;
             vertical-align: bottom;
         }
 
@@ -124,12 +124,12 @@
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">danceability</label>
-                <input type="number" class="form-control" id="danceability" name="danceability" step="any" required="required" min="0" max="2000" placeholder="Enter danceability">
+                <input type="number" class="form-control" id="danceability" name="danceability" step="any" required="required" min="0" max="2000" placeholder="Enter danceability (0-1)">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">energy</label>
-                <input type="number" class="form-control" id="energy" name="energy" step="any" required="required" min="0" max="3" placeholder="Enter energy">
+                <input type="number" class="form-control" id="energy" name="energy" step="any" required="required" min="0" max="3" placeholder="Enter energy(0-1)">
             </div>
 
             <div class="col-12" style="color: #FFF;">
@@ -139,22 +139,22 @@
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">speechiness</label>
-                <input type="number" class="form-control" id="speechiness" name="speechiness" step="any" required="required" min="0" max="64" placeholder="Enter speechiness">
+                <input type="number" class="form-control" id="speechiness" name="speechiness" step="any" required="required" min="0" max="64" placeholder="Enter speechiness(0-4)">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">acoustiness</label>
-                <input type="number" class="form-control" id="acoustiness" name="acoustiness" step="any" required="required" min="0" max="2" placeholder="Enter acoustiness">
+                <input type="number" class="form-control" id="acoustiness" name="acoustiness" step="any" required="required" min="0" max="2" placeholder="Enter acoustiness(0-1)">
             </div>
             
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">liveness</label>
-                <input type="number" class="form-control" id="liveness" name="liveness" step="any" required="required" min="0" max="20" placeholder="Enter liveness">
+                <input type="number" class="form-control" id="liveness" name="liveness" step="any" required="required" min="0" max="20" placeholder="Enter liveness(0-1)">
             </div>
 
             <div class="col-12" style="color: #FFF;">
                 <label for="floatingInput" class="form-label">valence</label>
-                <input type="number" class="form-control" id="valence" name="valence" step="any" required="required" min="0" max="8" placeholder="Enter number of valence">
+                <input type="number" class="form-control" id="valence" name="valence" step="any" required="required" min="0" max="8" placeholder="Enter number of valence(0-1)">
             </div>
 
             
