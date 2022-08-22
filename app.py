@@ -49,34 +49,34 @@ def predict():
 
     
     if prediction == [0]:
-      return render_template('index.html', prediction_text='Mobile belongs to 1 group i.e acoustic/folk', extra_text =" as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 1 group i.e acoustic/folk', extra_text =" as per Prediction by " + Model)
     
     elif prediction ==[1]:
-      return render_template('index.html', prediction_text='Mobile belongs to 2 group i.e Blues', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 2 group i.e Blues', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[2]:
-      return render_template('index.html', prediction_text='Mobile belongs to 3 group i.e Coumtry', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 3 group i.e Coumtry', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[3]:
-      return render_template('index.html', prediction_text='Mobile belongs to 4 group i.e hip hop', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 4 group i.e hip hop', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[4]:
-      return render_template('index.html', prediction_text='Mobile belongs to 5 group i.e Indie_alt', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 5 group i.e Indie_alt', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[5]:
-      return render_template('index.html', prediction_text='Mobile belongs to 6 group i.e instrumental', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='music genre belongs to 6 group i.e instrumental', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[6]:
-      return render_template('index.html', prediction_text='Mobile belongs to 7 group i.e metal', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 7 group i.e metal', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[7]:
-      return render_template('index.html', prediction_text='Mobile belongs to 8 group i.e jazz', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 8 group i.e jazz', extra_text ="as per Prediction by " + Model)
 
     elif prediction ==[8]:
-      return render_template('index.html', prediction_text='Mobile belongs to 9 group i.e pop', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 9 group i.e pop', extra_text ="as per Prediction by " + Model)
 
     else:
-      return render_template('index.html', prediction_text='Mobile belongs to 10 group i.e Rock', extra_text ="as per Prediction by " + Model)
+      return render_template('index.html', prediction_text='Music genre belongs to 10 group i.e Rock', extra_text ="as per Prediction by " + Model)
 
 #---------------------------------------------------------
 
