@@ -20,9 +20,9 @@ def predict():
 
     danceability = float(request.args.get('danceability'))
     energy = float(request.args.get('energy'))
-    mode = int(request.args.get('mode'))
+    mode = float(request.args.get('mode'))
     speechiness = float(request.args.get('speechiness'))
-    acostiness = float(request.args.get('acoustiness'))
+    acoustiness = float(request.args.get('acoustiness'))
     liveness = float(request.args.get('liveness'))
     valence = float(request.args.get('valence'))
 
